@@ -205,6 +205,7 @@ def show_seats(show_json, tkt_id):
             else:
                 print("B", end="  ")
         print()
+    f.close()
 
 def login(user_json, user_id, password):
     """
@@ -248,9 +249,10 @@ while enter:
             print("Menu: ")
             print("1) Book ticket")
             print("2) show booked ticket history")
-            print("3) Logout")
+            print("3) Show Seats Available!!")
+            print("4) Logout")
             val = input("Enter your choice: ")
-            if val == "3":
+            if val == "4":
                 print("Logging out!!!")
                 break
             elif val == "1":
@@ -268,6 +270,9 @@ while enter:
                 print("Ticket Booked!!")
             elif val == "2":
                 print("Show ticket history!!")
+            elif val == "3":
+                tkt_id = input("Enter the ticket id")
+                show_seats("movie.json", tkt_id)
             else:
                 print("Enter valid option between 1-3")
     elif val == "2":
